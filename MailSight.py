@@ -2,6 +2,7 @@
 #Author: Joshua Wilson Smith (https://www.github.com/jws8)
 #Date: 1/26/2022
 import smtplib, email, ssl, imaplib, pwinput
+#Must allow 3rd party "less-secure" applications to run in gmail settings
 #: THIS IS NOT THE RECOMMENDED WAY OF LOGGING IN... USE OS 2/16/22
 #A later version of MailSight will automate the local OS environment 
 #but I'm a bit fuzzy, currently, on how to do this globally. 2/16/22 
@@ -21,7 +22,6 @@ class MailSight():
         self.port = 465
         self.context = ssl.create_default_context()
         #dynamic program: self.receiving_email = str(input("where would you like to send this to?"))
-        
         self.receiver_list = []
     #verify that program is initialized
     print("Starting program...")
@@ -44,6 +44,7 @@ class MailSight():
         result, email_data = user.uid("fetch", most_recent, "(RFC822)")
         print(email_data)
         print("done")
+    
     #params STR:subject_str, STR:message_str, LIST: address_list
     def send_mail(self, subject_str, message_str, address_list):
         with smtplib.SMTP_SSL(self.smtp_url, self.port, context = self.context) as user:
@@ -59,13 +60,9 @@ class MailSight():
             body = message_str
             message = f"Subject: {subject}\n\n{body}"
             user.sendmail(self.username, self.receiver_list, message)
-        #
-
         print("sent email!")
-    def run(self):
-        #self.read_mail()
-        self.send_mail()
+    
 #Run Template
-#googly = MailSight()
-#googly.send_mail("Subject:")
-#googly.run()
+#my_gmail = MailSight()
+#my_gmail.send_mail("Subject:", "Body:", email_list)
+
