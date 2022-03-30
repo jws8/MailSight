@@ -86,11 +86,12 @@ class MailSight():
             body = message_str
             message = f"Subject: {subject}\n\n{body}"
             user.sendmail(self.username, self.receiver_list, message)
+            
         print("sent email!")
 
 #Run Template
 #my_gmail = MailSight()
-#my_gmail.app_login("YourUserName", "YourPassword")
+#my_gmail.set_username_password("YourUserName", "YourPassword")
 #email_list = ["johndoe@gmail.com, "marymartinez@gmail.com"]
 #read mail example
 #my_gmail.read_mail("inbox") 
