@@ -1,7 +1,7 @@
 #Email reader, sender, searcher, to attach to XLLibaries
 #Author: Joshua A.W. Smith (https://www.github.com/jws8)
 #Date: 1/26/2022
-import smtplib, imaplib, email, ssl, pwinput
+import smtplib, imaplib, email, ssl# pwinput
 from types import NoneType
 #Must allow 3rd party "less-secure" applications to run in gmail settings
 #: THIS IS NOT THE RECOMMENDED WAY OF LOGGING IN... USE OS 2/16/22
@@ -10,9 +10,9 @@ from types import NoneType
 class MailSight():
     def __init__(self):
         #to make the program dynamic use these username and pw vars
-        self.pw_input = pwinput.pwinput()
-        self.username = str(input("enter username: "))
-        self.password = pwinput.pwinput(mask = "$")
+        #self.pw_input = pwinput.pwinput()
+        #self.username = str(input("enter username: "))
+        #self.password = pwinput.pwinput(mask = "$")
         #use these for automation
         self.username = ""
         self.password = ""
