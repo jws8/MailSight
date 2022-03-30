@@ -3,10 +3,7 @@
 #Date: 1/26/2022
 import smtplib, imaplib, email, ssl# pwinput
 from types import NoneType
-#Must allow 3rd party "less-secure" applications to run in gmail settings
-#: THIS IS NOT THE RECOMMENDED WAY OF LOGGING IN... USE OS 2/16/22
-#A later version of MailSight will automate the local OS environment 
-#but I'm a bit fuzzy, currently, on how to do this globally. 2/16/22 
+
 class MailSight():
     def __init__(self):
         #to make the program dynamic use these username and pw vars
