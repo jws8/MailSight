@@ -1,7 +1,7 @@
 #Email reader, sender, searcher, to attach to XLLibaries
 #Author: Joshua A.W. Smith (https://www.github.com/jws8)
 #Date: 1/26/2022
-import smtplib, imaplib, email, ssl, pwinput
+import smtplib, imaplib, email, ssl #pwinput
 from types import NoneType
 #Must allow 3rd party "less-secure" applications to run in gmail settings
 #: THIS IS NOT THE RECOMMENDED WAY OF LOGGING IN... USE OS 2/16/22
@@ -34,9 +34,9 @@ class MailSight():
         self.receiver_list = []
         self.inbox_item_list = []
     #verify that program is initialized
-    print("Starting program...")
+    print("Initializing MailSight...")
 
-    def app_login(self, username, pw):
+    def set_username_password(self, username, pw):
         self.username = username
         self.password = pw
         print("LOGGED IN")
